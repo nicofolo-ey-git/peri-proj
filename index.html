@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f7fa" />
+    <title>Agente de contratos · Demo local</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Inicio">
+          <span class="brand-mark">C</span>
+          <span>Contratos<span class="brand-muted"> / Asistente</span></span>
+        </a>
+        <div class="environment"><span class="status-dot"></span> DEMO LOCAL · DATOS SINTÉTICOS</div>
+      </header>
+
+      <main class="layout">
+        <section class="conversation-panel" aria-label="Conversación">
+          <div class="intro">
+            <p class="eyebrow">ASISTENTE DE OPERACIONES</p>
+            <h1>Hola. ¿Qué necesitas revisar?</h1>
+            <p>Consulto el registro histórico congelado al <strong>30 de mayo de 2026</strong>. Cada llamada a herramienta queda visible; no escribo nada sin tu aprobación explícita.</p>
+          </div>
+          <div class="quick-actions" aria-label="Consultas de ejemplo">
+            <button type="button" class="quick-action" data-command="/vencen">Ver vencimientos</button>
+            <button type="button" class="quick-action" data-command="/buscar renovación">Buscar renovación</button>
+            <button type="button" class="quick-action" data-command="/contrato CTR-001">Ver CTR-001</button>
+          </div>
+          <ol id="messages" class="messages" aria-live="polite">
+            <li class="message assistant">
+              <div class="message-avatar">C</div>
+              <div class="message-content">
+                <p>Puedo buscar contratos, abrir un registro, revisar vencimientos próximos o preparar una propuesta de cambio.</p>
+                <p class="hint">Prueba <code>/buscar renovación</code>, <code>/contrato CTR-001</code>, <code>/vencen</code> o <code>/proponer CTR-001 owner Ana</code>.</p>
+              </div>
+            </li>
+          </ol>
+          <form id="chat-form" class="composer">
+            <label class="sr-only" for="chat-input">Escribe una consulta</label>
+            <textarea id="chat-input" rows="1" placeholder="Escribe una consulta o comando…" required></textarea>
+            <button id="send-button" type="submit" aria-label="Enviar mensaje">Enviar</button>
+          </form>
+          <p class="composer-note">El demo no usa un LLM ni envía datos a servicios externos.</p>
+        </section>
+
+        <aside class="right-rail">
+          <section class="rail-card alert-card">
+            <div class="rail-heading">
+              <div><p class="eyebrow">SEGUIMIENTO</p><h2>Vencimientos</h2></div>
+              <span class="count-pill" id="expiry-count">—</span>
+            </div>
+            <p class="rail-copy">Alertas deterministas calculadas respecto al corte histórico; no son alertas en tiempo real.</p>
+            <button id="expiry-button" class="text-button" type="button">Consultar vencimientos <span aria-hidden="true">→</span></button>
+          </section>
+          <section class="rail-card">
+            <p class="eyebrow">GOBIERNO DE DATOS</p>
+            <h2>La aprobación es obligatoria</h2>
+            <p class="rail-copy">Una propuesta no cambia el maestro. Solo “Aprobar escritura” registra un evento de aprobación en el log operativo, sin editar el CSV congelado.</p>
+            <div class="lock-note"><span aria-hidden="true">▣</span> Escrituras bloqueadas hasta aprobación</div>
+          </section>
+          <section class="rail-card tools-card">
+            <div class="rail-heading"><div><p class="eyebrow">TRANSPARENCIA</p><h2>Registro de herramientas</h2></div></div>
+            <div id="tool-log" class="tool-log">
+              <p class="empty-state">Las llamadas y sus resultados aparecerán aquí.</p>
+            </div>
+          </section>
+          <p class="rail-footnote">Muestra sintética. No cargar información real o confidencial.</p>
+        </aside>
+      </main>
+    </div>
+    <script type="module" src="/src/client.ts"></script>
+  </body>
+</html>
