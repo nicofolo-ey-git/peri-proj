@@ -1,0 +1,4 @@
+node_modules/
+dist/
+dist-server/
+fixtures/reto-02/aprobados.jsonl

@@ -1,0 +1,6 @@
+id,commercial_id,provider,service,start_date,end_date,status,annual_value,currency,owner,notes
+CTR-001,COM-001,Proveedor Ejemplo Uno,Soporte de red,2025-06-01,2026-06-10,active,12000,EUR,Equipo Norte,Renovación anual
+CTR-002,COM-002,Proveedor Ejemplo Dos,Licencias de diseño,2025-06-01,2026-06-25,active,8400,EUR,Equipo Centro,Revisión de usuarios
+CTR-003,COM-001,Proveedor Ejemplo Tres,Almacenamiento,2024-12-01,2026-05-20,expired,5200,EUR,Equipo Norte,Cerrado antes del corte
+CTR-004,COM-003,Proveedor Ejemplo Cuatro,Mensajería,2025-09-01,2026-09-01,active,3100,EUR,Equipo Sur,Servicio regional
+CTR-005,COM-002,Proveedor Ejemplo Cinco,Consultoría,2026-05-15,2027-05-14,pending,15000,EUR,Equipo Centro,Alta pendiente

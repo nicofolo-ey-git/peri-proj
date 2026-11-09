@@ -1,0 +1,27 @@
+{
+  "name": "agente-conversacional-contratos",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev:api": "tsx watch src/server.ts",
+    "dev:web": "vite --host 127.0.0.1",
+    "demo": "tsx demo.ts",
+    "test": "tsx --test",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && vite build && tsc --project tsconfig.server.json",
+    "start": "node dist-server/src/server.js"
+  },
+  "dependencies": {
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0"
+  }
+}

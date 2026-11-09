@@ -1,0 +1,5 @@
+[
+  { "id": "COM-001", "name": "Comercial Sintético Norte", "region": "Norte" },
+  { "id": "COM-002", "name": "Comercial Sintético Centro", "region": "Centro" },
+  { "id": "COM-003", "name": "Comercial Sintético Sur", "region": "Sur" }
+]
